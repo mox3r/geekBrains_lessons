@@ -1,5 +1,5 @@
-﻿Console.Write("Представья, смертный! ");
-Console.Write("Тебя зовут: ");
+﻿Console.WriteLine("Представьcя, смертный!");
+Console.Write("Меня зовут ");
 string username = Console.ReadLine();
 if (username.ToLower() == "mox3r")
 {
