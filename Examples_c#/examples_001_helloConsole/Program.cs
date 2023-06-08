@@ -1,5 +1,5 @@
-﻿Console.WriteLine("Представья, смертный! ");
-Console.WriteLine ("Тебя зовут: ");
+﻿Console.Write("Представья, смертный! ");
+Console.Write("Тебя зовут: ");
 string username = Console.ReadLine();
 if (username == "mox3r")
 {
@@ -7,6 +7,6 @@ if (username == "mox3r")
 }
 else
 {
-    Console.WriteLine("Будь моим гостем, ");
+    Console.Write("Будь моим гостем, ");
     Console.WriteLine(username);
 }
