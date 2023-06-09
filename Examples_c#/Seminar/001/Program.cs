@@ -2,5 +2,4 @@
 Console.Write("Введите целое число: ");
 string num1 = Console.ReadLine();
 int num = int.Parse(num1);
-Console.Write("Квадрат этого числа равен: ");
-Console.WriteLine (num*num);
+Console.Write($"Квадрат числа {num} равен: {num*num}");
