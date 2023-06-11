@@ -3,7 +3,7 @@
 // 8 -> 2, 4, 6, 8
 
 Console.Write("Введите целое число: ");
-int a = int.Parse(Console.ReadLine());
+int a = int.Parse(Console.ReadLine()!);
 int i = 2; //можно "0" тогда счет от нуля пойдёт
 
 while (i <= a)

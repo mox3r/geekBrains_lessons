@@ -1,6 +1,6 @@
 ﻿//Число в день недели
 System.Console.Write("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+int num = Convert.ToInt32(Console.ReadLine()!);
 switch (num)
 {
     case 1:

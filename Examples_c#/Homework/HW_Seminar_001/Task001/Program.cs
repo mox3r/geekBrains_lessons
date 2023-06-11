@@ -4,9 +4,9 @@
 // a = -9 b = -3->max = -3
 
 Console.Write("Введите чилсло а: ");
-int a = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine()!);
 Console.Write("Введите чилсло b: ");
-int b = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine()!);
 
 if (a > b)
 {

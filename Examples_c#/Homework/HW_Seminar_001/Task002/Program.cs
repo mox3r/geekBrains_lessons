@@ -4,11 +4,11 @@
 // 22 3 9 -> 22
 
 System.Console.Write("Введите первое число: ");
-int a = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine()!);
 System.Console.Write("Введите второе число: ");
-int b = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine()!);
 System.Console.Write("Введите третье число: ");
-int c = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine()!);
 
 int temp = a;
 

@@ -1,5 +1,5 @@
 ﻿System.Console.WriteLine("Введите размер массива: ");
-int arrLenght = int.Parse(Console.ReadLine());
+int arrLenght = int.Parse(Console.ReadLine()!);
 int[] arr = new int [arrLenght];
 
 System.Console.Write("Массив:");

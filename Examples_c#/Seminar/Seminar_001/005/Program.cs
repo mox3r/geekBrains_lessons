@@ -4,7 +4,7 @@
 // 918 -> 8
 
 System.Console.Write("Введите трехзначное число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+int num = Convert.ToInt32(Console.ReadLine()!);
 
 if (num < 99 || num > 1000)
 {

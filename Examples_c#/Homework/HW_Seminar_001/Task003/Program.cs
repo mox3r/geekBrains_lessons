@@ -4,7 +4,7 @@
 // 7 -> нет
 
 System.Console.Write("Введите число: ");
-int a = int.Parse(Console.ReadLine());
+int a = int.Parse(Console.ReadLine()!);
 
 switch (a % 2)
 {
