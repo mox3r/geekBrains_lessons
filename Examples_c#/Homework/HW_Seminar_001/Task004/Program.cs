@@ -12,5 +12,4 @@ while (i <= a)
     i += 2;
     if (i <= a)
         Console.Write(", ");
-    else Console.Write(" ");
 }
