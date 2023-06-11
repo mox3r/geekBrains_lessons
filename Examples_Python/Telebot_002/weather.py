@@ -42,7 +42,8 @@ async def get_weather(message: types.Message):
             data["sys"]["sunset"])
         # продолжительность дня
         length_of_the_day = datetime.datetime.fromtimestamp(
-            data["sys"]["sunset"])
+            data["sys"]["sunset"]) - datetime.datetime.fromtimestamp(
+                data["sys"]["sunrise"])
 
         code_to_smile = {
             "Clear": "Ясно \U00002600",
