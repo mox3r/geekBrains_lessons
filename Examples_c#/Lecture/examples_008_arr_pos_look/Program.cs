@@ -9,16 +9,20 @@ PrintArray();
 System.Console.WriteLine("\n");
 
 System.Console.Write("Введите запрашиваемое число: ");
+
 int find = int.Parse(Console.ReadLine()!);
+int pos = -1;
 
 for (int i = 0; i < arr.Length; i++)
 {
     if (arr[i] == find)
     {
-        System.Console.WriteLine($"Находится под позицией: {i}");
+        pos = i;
+       
         break;
     }
 }
+ System.Console.WriteLine($"Находится под позицией: {pos}");
 
 void FillArray()
 {
@@ -35,4 +39,3 @@ void PrintArray()
         System.Console.Write(arr[i] + " ");
     }
 }
-//Альтернативная запись.
