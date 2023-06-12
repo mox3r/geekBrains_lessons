@@ -1,13 +1,10 @@
-﻿System.Console.WriteLine("Введите размер массива: ");
+﻿System.Console.Write("Введите размер массива: ");
 int arrLenght = int.Parse(Console.ReadLine()!);
-int[] arr = new int [arrLenght];
+int[] arr = new int[arrLenght];
 
+FillArray();
 System.Console.Write("Массив:");
-for (int i = 0; i < arrLenght; i++)
-{
-    arr[i] = new Random().Next(0, 101);
-    System.Console.Write(arr[i] + " ");
-}
+PrintArray();
 
 System.Console.WriteLine("\n");
 
@@ -21,6 +18,26 @@ for (int i = 0; i < arr.Length; i++)
         System.Console.WriteLine($"Находится под позицией {i}");
         break;
     }
+    else
+    {
+        System.Console.WriteLine("Совпадений не найдено");
+        break;
+    }
 }
 
+void FillArray()
+{
+    for (int i = 0; i < arrLenght; i++)
+    {
+        arr[i] = new Random().Next(0, 101);
+    }
+}
+
+void PrintArray()
+{
+    for (int i = 0; i < arrLenght; i++)
+    {
+        System.Console.Write(arr[i] + " ");
+    }
+}
 //Альтернативная запись.
