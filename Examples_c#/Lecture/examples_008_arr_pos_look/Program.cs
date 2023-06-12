@@ -9,18 +9,13 @@ PrintArray();
 System.Console.WriteLine("\n");
 
 System.Console.Write("Введите запрашиваемое число: ");
-int find = int.Parse(Console.ReadLine());
+int find = int.Parse(Console.ReadLine()!);
 
 for (int i = 0; i < arr.Length; i++)
 {
     if (arr[i] == find)
     {
-        System.Console.WriteLine($"Находится под позицией {i}");
-        break;
-    }
-    else
-    {
-        System.Console.WriteLine("Совпадений не найдено");
+        System.Console.WriteLine($"Находится под позицией: {i}");
         break;
     }
 }
