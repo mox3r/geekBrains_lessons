@@ -18,11 +18,11 @@ for (int i = 0; i < arr.Length; i++)
     if (arr[i] == find)
     {
         pos = i;
-       
+
         break;
     }
 }
- System.Console.WriteLine($"Находится под позицией: {pos}");
+System.Console.WriteLine($"Находится под позицией: {pos}");
 
 void FillArray()
 {
