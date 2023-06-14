@@ -1,7 +1,7 @@
 ﻿// Вывести третью цифру числа
 System.Console.Write("Введите число: ");
 int num = int.Parse(Console.ReadLine()!);
-if (num <= 99 && num > -99)
+if (num <= 99)
 {
     System.Console.WriteLine("В этом числе нет нужного колличества знаков!");
 }
