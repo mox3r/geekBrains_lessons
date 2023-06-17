@@ -24,33 +24,27 @@ void PalindromeTry(int num)
             m *= 10;
         }
 
-        if (count % 2 == 0)
+
+        int[] arr = new int[count];
+        for (int i = 0; i < count; i++)
         {
-            System.Console.WriteLine("Число не является палиндромом!");
+            m /= 10;
+            arr[i] = (num / m) % 10;
+
         }
-        else
+
+        for (int i = 0; i < arr.Length / 2; i++)
         {
-            int[] arr = new int[count];
-            for (int i = 0; i < count; i++)
+            if (arr[i] == arr[count - 1])
             {
-                m /= 10;
-                arr[i] = (num / m) % 10;
-
+                count--;
             }
-
-            for (int i = 0; i < arr.Length / 2; i++)
+            else
             {
-                if (arr[i] == arr[count - 1])
-                {
-                    count--;
-                }
-                else
-                {
-                    System.Console.WriteLine("Число не является палиндромом!");
-                    break;
-                }
-                if (i == arr.Length / 2 - 1) System.Console.WriteLine("Число является палиндромом!");
+                System.Console.WriteLine("Число не является палиндромом!");
+                break;
             }
+            if (i == arr.Length / 2 - 1) System.Console.WriteLine("Число является палиндромом!");
         }
     }
 }
