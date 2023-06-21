@@ -6,8 +6,10 @@ int InputNum(string msg)
 }
 void PowAB(int a, int b)
 {
-    System.Console.WriteLine($"{a} ** {b} = {Math.Pow(a, b)}");
+    if (b >= 0) System.Console.WriteLine($"{a} ** {b} = {Math.Pow(a, b)}");
+    else System.Console.WriteLine("Не стоит возводить в отрицательную степень!");
 }
+System.Console.WriteLine("Число А в степени В");
 int a = InputNum("Введите число А: ");
 int b = InputNum("Введите число B: ");
 PowAB(a, b);
