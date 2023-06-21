@@ -1,5 +1,4 @@
 ﻿// принять числа в массив, вывести массив на экран;
-
 int[] ArrFilling(string msg)
 {
     System.Console.WriteLine("Введите величину массива: ");
@@ -39,6 +38,6 @@ void PrintArr(int[] arr)
 }
 
 System.Console.WriteLine("Заполнение массива и вывод его в консоль.");
-int[] arr = ArrAutoFilling("Введите размер массива.");
+int[] arr = ArrAutoFilling("Введите размер массива."); // можно и руками (перекомитить строки 41-42)
 // int[] arr = ArrFilling("Введите размер массива.");
 PrintArr(arr);
