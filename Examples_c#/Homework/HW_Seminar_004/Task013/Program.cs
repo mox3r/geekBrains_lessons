@@ -1,17 +1,17 @@
 ﻿// принять числа в массив, вывести массив на экран;
-int[] ArrFilling(string msg)
-{
-    System.Console.WriteLine("Введите величину массива: ");
-    int size = int.Parse(Console.ReadLine()!);
-    int[] arr = new int[size];
+// int[] ArrFilling(string msg)
+// {
+//     System.Console.WriteLine("Введите величину массива: ");
+//     int size = int.Parse(Console.ReadLine()!);
+//     int[] arr = new int[size];
 
-    for (int i = 0; i < arr.Length; i++)
-    {
-        System.Console.Write("Введите число: ");
-        arr[i] = int.Parse(Console.ReadLine()!);
-    }
-    return arr;
-}
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write("Введите число: ");
+//         arr[i] = int.Parse(Console.ReadLine()!);
+//     }
+//     return arr;
+// }
 
 int[] ArrAutoFilling(string msg)
 {
