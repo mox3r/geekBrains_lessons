@@ -42,7 +42,7 @@ void SumMinMax(int[] arr)
     }
 
     Console.WriteLine($"Сумма положительных эл-тов: {max}");
-    Console.WriteLine($"Сумма отрицательных эл-тов {min}");
+    Console.WriteLine($"Сумма отрицательных эл-тов: {min}");
 }
 
 int size = InputNum("Введите длину массива: ");
