@@ -14,11 +14,11 @@ double[] NewArr(int size)
 
 void FillArray(double[] arr)
 {
-
+    Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        int randInt = new Random().Next(-99, 100);
-        double randDouble = Math.Round(new Random().NextDouble(), 2);
+        int randInt = rnd.Next(-99, 100);
+        double randDouble = Math.Round(rnd.NextDouble(), 2);
         arr[i] = (double)randInt + randDouble;
     }
 }

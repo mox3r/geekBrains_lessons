@@ -15,9 +15,10 @@ int[] NewArr(int size)
 
 void FillArray(int[] arr)
 {
+    Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(-999, 1000);
+        arr[i] = rnd.Next(-999, 1000);
     }
 }
 
