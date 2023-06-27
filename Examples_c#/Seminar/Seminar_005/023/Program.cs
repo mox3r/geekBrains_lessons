@@ -1,4 +1,4 @@
-﻿Console.WriteLine("Массив, рандомная длина, значения. Перевести их в аналог с противоположным знаком.");
+﻿System.Console.WriteLine("Массив. Произведение arr[i] * arr[arr.Lenth - 1 - i].");
 
 int InputNum(string msg)
 {
@@ -30,21 +30,21 @@ void PrintArray(int[] arr)
     }
 }
 
-void RevNum(int[] arr)
+void MultiPair(int[] arr)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < arr.Length / 2; i++)
     {
-        arr[i] *= -1;
+        System.Console.Write($"{arr[i] * arr[arr.Length - i - 1]} ");
     }
+    if (arr.Length % 2 == 1) System.Console.WriteLine(arr[arr.Length / 2]);
 }
 
-int size = InputNum("Введите размер массива: ");
-int minVal = InputNum("Введите минимальное значение массива: ");
-int maxVal = InputNum("Введите максимальное значение массива: ");
+int size = InputNum("Введире размер массива: ");
+int minVal = InputNum("Ведите минимальное значение эл-та: ");
+int maxVal = InputNum("Ведите максимальное значение эл-та: ");
+
 int[] arr = NewArr(size);
 
 FillArray(arr, minVal, maxVal);
 PrintArray(arr);
-Console.WriteLine("Новый массив:");
-RevNum(arr);
-PrintArray(arr);
+MultiPair(arr);
