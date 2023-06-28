@@ -8,7 +8,7 @@ int InputNum(string msg)
 
 void Fibon(int num)
 {
-    int temp = 0, temp1 = 1, temp2 = 0;
+    long temp = 0, temp1 = 1, temp2 = 0;
     for (int i = 0; i <= num; i++)
     {
         System.Console.Write(temp + " ");
