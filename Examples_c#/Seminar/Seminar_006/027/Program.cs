@@ -9,7 +9,7 @@ int InputNum(string msg)
 void Fibon(int num)
 {
     long temp = 0, temp1 = 1, temp2 = 0;
-    for (int i = 0; i <= num; i++)
+    for (int i = 0; i < num; i++)
     {
         System.Console.Write(temp + " ");
         temp2 = temp + temp1;
