@@ -58,7 +58,7 @@ void AvgCols(int[,] arr)
         {
             colSumm += arrT[i, j];
         }
-        System.Console.Write($"{Math.Round((double)colSumm / arrT.GetLength(1), 2)}\t");
+        Console.Write($"{Math.Round((double)colSumm / arrT.GetLength(1), 2)}\t");
     }
 }
 
@@ -67,5 +67,5 @@ int sizeN = InputNum("Введите количество столбцов: ");
 int[,] arr = Create2DArray(sizeM, sizeN);
 Fill2DArray(arr);
 Print2DArray(arr);
-System.Console.WriteLine();
+Console.WriteLine();
 AvgCols(arr);

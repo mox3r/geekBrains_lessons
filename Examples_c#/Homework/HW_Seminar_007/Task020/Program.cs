@@ -38,7 +38,8 @@ void Fill2DArray(int[,] arr)
 void SortArray(int[,] arr, int pos)
 {
     if (pos > arr.GetLength(0) * arr.GetLength(1))
-        System.Console.WriteLine("Массив мал, позиция большая");
+        Console.WriteLine("Массив мал, позиция большая...");
+    else if (pos <= 0) Console.WriteLine("Массив начинается с первого элемента!");
     else
     {
         int pos1 = 0;
@@ -47,7 +48,7 @@ void SortArray(int[,] arr, int pos)
             pos -= arr.GetLength(1);
             pos1++;
         }
-        System.Console.WriteLine($"{arr[pos1, pos - 1]}");
+        Console.WriteLine($"Искомый элемент равен {arr[pos1, pos - 1]}");
     }
 }
 int sizeM = InputNum("Введите количество строк: ");
