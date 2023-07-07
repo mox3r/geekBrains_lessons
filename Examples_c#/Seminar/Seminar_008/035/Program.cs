@@ -22,25 +22,37 @@ void Print2DArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write($"{array[i, j]} ");
+            Console.Write($"{array[i, j]}\t");
         Console.WriteLine();
     }
 }
 
-void SortArray(int[,] array)
+int[] Dict(int[,] array, int minValue, int maxValue)
 {
-    for (int j = 0; j < array.GetLength(1); j++)
+    int[] result = new int[maxValue - minValue + 1];
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        array[0, j] = array[0, j] + array[array.GetLength(0) - 1, j];
-        array[array.GetLength(0) - 1, j] = array[0, j] - array[array.GetLength(0) - 1, j];
-        array[0, j] = array[0, j] - array[array.GetLength(0) - 1, j];
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            int index = array[i, j] - minValue;
+            result[index]++;
+        }
+    }
+    return result;
+}
+
+void PrintResult(int[] dict, int minValue)
+{
+    for (int i = 0; i < dict.Length; i++)
+    {
+        System.Console.WriteLine($"Число {i + minValue} встречается {dict[i]} раз(а).");
     }
 }
 
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("Двумерный массив. Поменять местами первую и последнюю строки.");
+    Console.WriteLine("Частотный словарь массива.");
     int sizeM, sizeN, minValue, maxValue;
     try
     {
@@ -59,9 +71,7 @@ while (true)
     int[,] array = Create2DArray(sizeM, sizeN);
     Fill2DArray(array, minValue, maxValue);
     Print2DArray(array);
-    Console.WriteLine("Результирующий массив:");
-    SortArray(array);
-    Print2DArray(array);
+    PrintResult(Dict(array, minValue, maxValue), minValue);
 
     Console.ReadLine();
 }

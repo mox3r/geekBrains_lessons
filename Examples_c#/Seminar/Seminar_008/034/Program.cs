@@ -17,6 +17,16 @@ void Fill2DArray(int[,] array, int minValue, int maxValue)
             array[i, j] = rnd.Next(minValue, maxValue + 1);
 }
 
+void Transpose2DArray(int[,] array, int[,] arrayTranspose)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            arrayTranspose[j, i] = array[i, j];
+        }
+    }
+}
 void Print2DArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -27,20 +37,12 @@ void Print2DArray(int[,] array)
     }
 }
 
-void SortArray(int[,] array)
-{
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        array[0, j] = array[0, j] + array[array.GetLength(0) - 1, j];
-        array[array.GetLength(0) - 1, j] = array[0, j] - array[array.GetLength(0) - 1, j];
-        array[0, j] = array[0, j] - array[array.GetLength(0) - 1, j];
-    }
-}
+
 
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("Двумерный массив. Поменять местами первую и последнюю строки.");
+    Console.WriteLine("Заменить строки на стролбцы.");
     int sizeM, sizeN, minValue, maxValue;
     try
     {
@@ -55,13 +57,16 @@ while (true)
         Console.ReadLine();
         continue;
     }
-
+    if(sizeM == sizeN){
     int[,] array = Create2DArray(sizeM, sizeN);
+    int[,] arrayTranspose = Create2DArray(sizeN, sizeM);
     Fill2DArray(array, minValue, maxValue);
     Print2DArray(array);
     Console.WriteLine("Результирующий массив:");
-    SortArray(array);
-    Print2DArray(array);
+    Transpose2DArray(array,arrayTranspose);
+    Print2DArray(arrayTranspose);
+    }
+    else Console.WriteLine("Не все значения помещаются по условию.");
 
     Console.ReadLine();
 }

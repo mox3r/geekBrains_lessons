@@ -22,25 +22,17 @@ void Print2DArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write($"{array[i, j]} ");
+            Console.Write($"{array[i, j]}\t");
         Console.WriteLine();
     }
 }
 
-void SortArray(int[,] array)
-{
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        array[0, j] = array[0, j] + array[array.GetLength(0) - 1, j];
-        array[array.GetLength(0) - 1, j] = array[0, j] - array[array.GetLength(0) - 1, j];
-        array[0, j] = array[0, j] - array[array.GetLength(0) - 1, j];
-    }
-}
+
 
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("Двумерный массив. Поменять местами первую и последнюю строки.");
+    Console.WriteLine("Удалить из матрицы строку и столбец на пересечении которых находится минимальный эл-т массива.");
     int sizeM, sizeN, minValue, maxValue;
     try
     {
@@ -60,8 +52,7 @@ while (true)
     Fill2DArray(array, minValue, maxValue);
     Print2DArray(array);
     Console.WriteLine("Результирующий массив:");
-    SortArray(array);
-    Print2DArray(array);
+
 
     Console.ReadLine();
 }
