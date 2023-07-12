@@ -27,6 +27,34 @@ void Print2DArray(int[,] array)
     }
 }
 
+void WOPosMin(int[,] array)
+{
+    int minI = 0, minJ = 0, minN = array[0, 0];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[minI, minJ] > array[i, j])
+            {
+                minI = i;
+                minJ = j;
+            }
+        }
+    }
+
+    Console.WriteLine($"Минимальный эл-т {minN}: столбец {minJ + 1}, строка {minI + 1}");
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        if (i == minI) continue;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (j == minJ) continue;
+            Console.Write($"{array[i, j]}\t");
+        }
+        Console.WriteLine();
+    }
+}
 
 
 while (true)
@@ -52,7 +80,7 @@ while (true)
     Fill2DArray(array, minValue, maxValue);
     Print2DArray(array);
     Console.WriteLine("Результирующий массив:");
-
+    WOPosMin(array);
 
     Console.ReadLine();
 }

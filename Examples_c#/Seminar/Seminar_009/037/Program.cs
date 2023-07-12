@@ -27,33 +27,12 @@ void Print2DArray(int[,] array)
     }
 }
 
-void Sort2dArray(int[,] array)
-{
-    int summ = 0, index = 0, temp = summ;
-    int[] arrRes = new int[array.GetLength(0)];
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        summ = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            summ += array[i, j];
-        }
-        arrRes[index] = summ;
-        index++;
-    }
-    index = 0;
-    for (int k = 1; k < arrRes.Length; k++)
-    {
-        if (arrRes[k] < arrRes[index]) index = k;
-    }
-    Console.WriteLine($"Наименьшая сумма в строке {index + 1}");
-}
 
 
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("Наименьшая сумма в строке.");
+    Console.WriteLine("");
     int sizeM, sizeN, minValue, maxValue;
     try
     {
@@ -72,7 +51,7 @@ while (true)
     int[,] array = Create2DArray(sizeM, sizeN);
     Fill2DArray(array, minValue, maxValue);
     Print2DArray(array);
-    Sort2dArray(array);
+    Console.WriteLine("Результирующий массив:");
 
 
     Console.ReadLine();
