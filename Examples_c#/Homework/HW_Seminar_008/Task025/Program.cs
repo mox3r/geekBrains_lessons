@@ -13,21 +13,28 @@ void Fill3DArray(int[,,] array, int minValue, int maxValue)
 {
     Random rnd = new Random();
     bool isThere = false;
+    int[] RandomArr = new int[maxValue - minValue + 1];
+    for (int i = 0; i < RandomArr.Length;)
+    {
+        int newRandomVal = rnd.Next(minValue, maxValue + 1);
+        for (int x = 0; x < i; x++)
+
+            if (RandomArr[i] == newRandomVal)
+                isThere = true;
+
+        if (!isThere)
+        {
+            RandomArr[i] = newRandomVal;
+            i++;
+        }
+    }
+    int index = 0;
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
-            for (int k = 0; k < array.GetLength(2);)
+            for (int k = 0; k < array.GetLength(2); k++)
             {
-                int newRandomVal = rnd.Next(minValue, maxValue+1);
-                for (int x = 0; x < k; x++)
-
-                    if (array[i, j, k] == newRandomVal)
-                        isThere = true;
-
-                if (!isThere)
-                {
-                    array[i, j, k] = newRandomVal;
-                    k++;
-                }
+                array[i, j, k] = RandomArr[index];
+                index++;
             }
 }
 
@@ -43,7 +50,30 @@ void Print3DArray(int[,,] array)
         }
 }
 
+int[] Dict(int[,,] array, int minValue, int maxValue)
+{
+    int[] result = new int[maxValue - minValue + 1];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                int index = array[i, j, k] - minValue;
+                result[index]++;
+            }
+        }
+    }
+    return result;
+}
 
+void PrintResult(int[] dict, int minValue)
+{
+    for (int i = 0; i < dict.Length; i++)
+    {
+        System.Console.WriteLine($"Число {i + minValue} встречается {dict[i]} раз(а).");
+    }
+}
 
 while (true)
 {
@@ -68,6 +98,7 @@ while (true)
     int[,,] array = Create3DArray(sizeM, sizeN, sizeK);
     Fill3DArray(array, minValue, maxValue);
     Print3DArray(array);
+    PrintResult(Dict(array, minValue, maxValue), minValue);
 
     Console.ReadLine();
 }
