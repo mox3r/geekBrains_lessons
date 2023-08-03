@@ -12,8 +12,8 @@ bool Check(int[] array)
 
 bool show = false;
 
-int size = 1000000;
-int max = 2000000;
+int size = 100000;
+int max = 200000; 
 
 int[] arr1 = new int[size];
 
@@ -70,4 +70,3 @@ sw.Stop();
 Console.WriteLine($"arr2 - {Check(arr2)} {sw.ElapsedMilliseconds} ms");
 
 if (show) Console.WriteLine($"[{String.Join(',', arr2)}]");
-
