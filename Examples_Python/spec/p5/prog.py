@@ -7,7 +7,8 @@ arr1 = [size]
 for x in range(size):
     arr1.append(randint(-10000, 10000))
     
-#print(arr1)
+arr2 = arr1[:]    
+# print(arr1)
 ta = time.perf_counter()
 for i in range(size - 1):
     for j in range(size - i - 1):
@@ -19,10 +20,6 @@ tb = time.perf_counter()
 print(f"arr1: Время {tb - ta:0.3f} сек")
 # print(arr1)
 
-
-arr2 = [size]
-for x in range(size):
-    arr2.append(randint(-1000, 10000))
 
 # print(arr1)
 ta = time.perf_counter()
