@@ -6,12 +6,3 @@
 * homework tasks
 * other
 
-## Examples_Java
-+ excercises in Java
-+ lecture tasks
-+ other
-
-## Expamples_Python
-* exercises in Python coding
-* telegram-bots
-* other
